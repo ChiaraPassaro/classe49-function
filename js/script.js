@@ -65,27 +65,67 @@
 //   return string
 // }
 
-function isEven(num) { //num e un nome di variabile interna
-  if (num % 2 == 0) {
-    return true;
-  } else {
-    return false;
+// function isEven(num) { //num e un nome di variabile interna
+//   if (num % 2 == 0) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
+
+// // console.log(isEven(2)); //test di funzionamento
+
+
+// //chiadiamo all'utente di inserire un numero
+// let numberUser = parseInt(prompt('inserisci un numero intero')); //creo il primo prompt
+
+// //controlliamo se quello che ha inserito l'utente e un numero
+// // se non lo e lo devo richiedere altrimenti passo oltre
+// while (isNaN(numberUser)) { //fiche ho un NaN continuo a richiedere il numero
+//   console.log('inizio while');
+//   numberUser = parseInt(prompt('inserisci un numero intero')); // riassegno un nuovo valore e fgaccio comparire un nuovo prompt
+// }
+
+// console.log(isEven(numberUser));
+
+
+//arrow functions
+
+
+//funzione con nome
+// const myFunction = () => 1 + 1; //return automatico
+// const myFunction = () => {
+//   //codice
+//   return 1 + 1;
+// }
+
+// const resultFunction = myFunction();
+// console.log(resultFunction);
+
+// //funzione anonima
+// document.getElementById('button').addEventListener('click',
+//   () => {
+//     return console.log(this); //il this e diverso dalla function normale
+//   }
+// );
+
+function nomeFunzione() {
+  return this
+}
+
+const myFunction3 = () => 'pippo';
+const myFunction2 = () => 2;
+const myFunction1 = () => this;
+console.log(myFunction1());
+console.log(nomeFunzione());
+
+document.getElementById('button').addEventListener('click',
+  () => {
+    return console.log(this); //window
   }
-}
-
-// console.log(isEven(2)); //test di funzionamento
-
-
-//chiadiamo all'utente di inserire un numero
-let numberUser = parseInt(prompt('inserisci un numero intero')); //creo il primo prompt
-
-//controlliamo se quello che ha inserito l'utente e un numero
-// se non lo e lo devo richiedere altrimenti passo oltre
-while (isNaN(numberUser)) { //fiche ho un NaN continuo a richiedere il numero
-  console.log('inizio while');
-  numberUser = parseInt(prompt('inserisci un numero intero')); // riassegno un nuovo valore e fgaccio comparire un nuovo prompt
-}
-
-console.log(isEven(numberUser));
-
-
+);
+document.getElementById('button').addEventListener('click',
+  function () {
+    return this; //questo e elemento su cui clicco
+  }
+);
